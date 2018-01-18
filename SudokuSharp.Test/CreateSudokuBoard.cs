@@ -1,10 +1,9 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace SudokuSharp.Test
 {
     [TestFixture]
-    public class SudokuBoardTest
+    public class CreateSudokuBoard
     {
         SudokuBoard _board;
 
@@ -23,10 +22,10 @@ namespace SudokuSharp.Test
         [Test]
         public void BoardIsInitializedToUnset()
         {
-            for (ushort row = 0; row < 9; row++)
-            for (ushort column = 0; column < 9; column++)
+            for (ushort x = 0; x < 9; x++)
+            for (ushort y = 0; y < 9; y++)
             {
-                Assert.That(_board.Cell(row, column), Is.EqualTo(0));
+                Assert.That(_board.Cell(x, y), Is.EqualTo(0));
             }
         }
     }
